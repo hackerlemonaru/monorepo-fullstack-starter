@@ -41,3 +41,24 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Update lockfile if needed
+        run: |
+          if [ -f pnpm-lock.yaml ]; then
+            echo "Lockfile exists, checking compatibility..."
+            pnpm install --lockfile-only
+          fi
+
+      - name: Build packages
+        run: pnpm run build
+
+      - name: Type checking
+        run: pnpm run type-check
+
+      - name: Lint check
+        run: pnpm run lint:check
