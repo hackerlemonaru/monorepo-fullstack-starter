@@ -62,3 +62,9 @@ jobs:
 
       - name: Lint check
         run: pnpm run lint:check
+
+      - name: Format check
+        run: pnpm run format:check
+
+      - name: Run unit tests
+        run: pnpm run test
