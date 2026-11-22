@@ -1,0 +1,23 @@
+name: CI/CD Pipeline
+
+# PRs only -- a merged PR already passed here, so push-to-branch runs were
+# pure duplicates. Feature PRs target staging; staging -> main is the
+# release PR. Tags don't run CI: release.yml ships what main verified.
+on:
+  pull_request:
+    branches: [staging, main]
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore: ['**.md', 'docs/**']
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+  PNPM_VERSION: '9.0.0'
+  TURBO_TELEMETRY_DISABLED: 1
+
+jobs:
+  # Single comprehensive job with all checks
