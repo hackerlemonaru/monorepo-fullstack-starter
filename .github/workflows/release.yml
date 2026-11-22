@@ -32,3 +32,22 @@ jobs:
       - name: Refuse tags that are not on main
         run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main
 
+      # Derived from the repo name (lowercased, as GHCR requires), so a
+      # project created from this template needs no edits here.
+      - name: Image name
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}-api" >> "$GITHUB_ENV"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Docker Buildx
