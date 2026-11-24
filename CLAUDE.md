@@ -35,3 +35,23 @@ approval first.
 
 ### Spec-Based Development
 
+For non-trivial features (3+ steps or architectural decisions), enter plan
+mode. Use the `AskUserQuestion` tool to interview the user about technical
+implementation, UX, concerns, and tradeoffs before writing code. Write
+detailed specs upfront to reduce ambiguity. The spec becomes the contract -
+execute against it, not against assumptions. Strip away all assumptions
+before touching code.
+
+---
+
+## 2. Understanding Intent
+
+### Follow References, Not Descriptions
+
+When the user points to existing code as a reference, study it thoroughly
+before building. Match its patterns exactly. The user's working code is a
+better spec than their English description.
+
+### Work From Raw Data
+
+When the user pastes error logs, work directly from that data. Don't guess,
