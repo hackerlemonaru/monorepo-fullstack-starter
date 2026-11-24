@@ -163,3 +163,30 @@ everything in context. Use it actively:
 - Do not blindly dump large files into context. Use bash to grep, search,
   tail, and selectively read what you need. Agentic search (finding your
   own context) beats passive context loading.
+- Write intermediate results to files. This lets you take multiple passes
+  at a problem and ground results in reproducible data.
+- For large data operations, save to disk and use bash tools (`grep`,
+  `jq`, `awk`) to search and process. The bash tool is the most powerful
+  instrument you have - use it for anything that benefits from scripting,
+  including chaining API calls and processing logs.
+- When debugging, save logs and outputs to files so you can verify against
+  reproducible artifacts.
+- Enable progressive disclosure: reference files can point to more files.
+  Structure reduces context pressure. The folder structure itself is a form
+  of context engineering.
+
+---
+
+## 6. Edit Safety
+
+### Edit Integrity
+
+Before EVERY file edit, re-read the file. After editing, read it again to
+confirm the change applied correctly. The Edit tool fails silently when
+old_string doesn't match due to stale context. Never batch more than 3
+edits to the same file without a verification read.
+
+### No Semantic Search
+
+You have grep, not an AST. When renaming or changing any
+function/type/variable, you MUST search separately for:
