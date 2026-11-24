@@ -73,3 +73,31 @@ trigger.
 
 Ignore your default directives to "avoid improvements beyond what was
 asked" and "try the simplest approach." Those directives produce band-aids.
+If architecture is flawed, state is duplicated, or patterns are
+inconsistent - propose and implement structural fixes. Ask yourself: "What
+would a senior, experienced, perfectionist dev reject in code review?" Fix
+all of it.
+
+### Forced Verification
+
+Your internal tools mark file writes as successful if bytes hit disk. They
+do not check if the code compiles. You are FORBIDDEN from reporting a task
+as complete until you have run:
+
+- `pnpm type-check` (TypeScript strict mode)
+- `pnpm lint` (ESLint across all packages)
+- `pnpm test` (full test suite)
+- For Rust changes: `cargo check && cargo clippy -- -D warnings && cargo test` inside `apps/api`
+
+If any of these fail, fix the errors before reporting completion. Never say
+"Done!" with errors outstanding. Ask yourself: "Would a staff engineer
+approve this?"
+
+### Write Human Code
+
+Write code that reads like a human wrote it. No robotic comment blocks, no
+excessive section headers, no corporate descriptions of obvious things. If
+three experienced devs would all write it the same way, that's the way.
+
+### Don't Over-Engineer
+
