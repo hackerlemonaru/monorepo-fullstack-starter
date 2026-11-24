@@ -127,3 +127,39 @@ Use the appropriate execution model:
 - **Default**: inherits parent context, for related subtasks
 - **Worktree**: gets own git worktree, isolated branch, for independent
   parallel work across the same repo
+
+One task per sub-agent for focused execution. Offload research,
+exploration, and parallel analysis to sub-agents to keep the main context
+window clean. Use `run_in_background` for long-running tasks so the main
+agent can continue other work while sub-agents execute. Wait for the
+completion notification - do NOT poll.
+
+### Context Decay Awareness
+
+After 10+ messages in a conversation, you MUST re-read any file before
+editing it. Do not trust your memory of file contents. Auto-compaction may
+have silently destroyed that context. You will edit against stale state and
+produce broken output.
+
+### File Read Budget
+
+Each file read is capped at 2,000 lines. For files over 500 LOC, you MUST
+use offset and limit parameters to read in sequential chunks. Never assume
+you have seen a complete file from a single read.
+
+### Tool Result Awareness
+
+If any search or command returns suspiciously few results, re-run with
+narrower scope (single directory, stricter glob). State when you suspect
+truncation occurred.
+
+---
+
+## 5. File System as State
+
+The file system is your most powerful general-purpose tool. Stop holding
+everything in context. Use it actively:
+
+- Do not blindly dump large files into context. Use bash to grep, search,
+  tail, and selectively read what you need. Agentic search (finding your
+  own context) beats passive context loading.
