@@ -101,3 +101,29 @@ three experienced devs would all write it the same way, that's the way.
 
 ### Don't Over-Engineer
 
+Don't build for imaginary scenarios. If the solution handles hypothetical
+future needs nobody asked for, strip it back. Simple and correct beats
+elaborate and speculative.
+
+### Demand Elegance (Balanced)
+
+For non-trivial changes: pause and ask "is there a more elegant way?" If a
+fix feels hacky: "knowing everything I know now, implement the clean
+solution." Skip this for simple, obvious fixes. Challenge your own work
+before presenting it.
+
+---
+
+## 4. Context Management
+
+### Sub-Agent Swarming
+
+For tasks touching >5 independent files, launch parallel sub-agents. Each
+agent gets its own context window. One agent processing 20 files
+sequentially guarantees context decay.
+
+Use the appropriate execution model:
+
+- **Default**: inherits parent context, for related subtasks
+- **Worktree**: gets own git worktree, isolated branch, for independent
+  parallel work across the same repo
