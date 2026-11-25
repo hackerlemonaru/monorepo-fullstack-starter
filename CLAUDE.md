@@ -304,3 +304,26 @@ pnpm dev:dashboard    # Dashboard → http://localhost:5174
 #### Rust API (run inside `apps/api`)
 
 ```bash
+cargo test            # Run tests
+cargo test <name>     # Run a single test
+cargo clippy -- -D warnings   # Lint
+cargo check           # Fast compile check
+```
+
+#### Database (from root)
+
+```bash
+pnpm db:migrate       # Run migrations
+pnpm db:seed          # Seed database
+pnpm db:reset         # Reset database
+pnpm db:studio        # Open DB studio
+```
+
+#### TypeScript type generation from Rust
+
+```bash
+pnpm db:generate      # Regenerates @repo/api-types from Rust structs (via ts-rs)
+```
+
+### Architecture
+
