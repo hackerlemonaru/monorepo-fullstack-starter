@@ -272,3 +272,20 @@ modifying a shared package, verify downstream consumers still build:
 
 ## Project Reference
 
+### Commands
+
+#### Root (runs across all workspaces via Turborepo)
+
+```bash
+pnpm dev              # Start all apps
+pnpm build            # Build all packages
+pnpm lint             # Lint all packages
+pnpm lint:fix         # Auto-fix lint issues
+pnpm type-check       # TypeScript type checking
+pnpm format           # Format with Prettier
+pnpm format:check     # Check formatting
+pnpm check-all        # type-check + lint + format:check
+pnpm test             # Run tests for every workspace that defines one
+                       # (currently: apps/api, apps/dashboard, packages/ui —
+                       # apps/web and apps/docs have no test script yet, so
+                       # turbo silently skips them rather than failing)
