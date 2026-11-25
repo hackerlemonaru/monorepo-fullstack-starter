@@ -377,3 +377,15 @@ Web (`apps/web/.env`):
 ```
 NEXT_PUBLIC_API_URL=http://localhost:3001
 ```
+
+### Commit Convention
+
+This repo enforces [Conventional Commits](https://www.conventionalcommits.org/):
+
+```
+<type>(<scope>): <subject>
+```
+
+Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `perf`, `ci`, `build`, `revert`
+
+Husky runs lint-staged and commitlint on every commit. Do not use `--no-verify`.
