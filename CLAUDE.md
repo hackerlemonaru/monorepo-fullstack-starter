@@ -355,3 +355,25 @@ The Rust API uses `ts-rs` macros to derive TypeScript types from Rust structs. R
 
 #### Key Design Patterns
 
+- **Frontend data fetching:** React Query for server state; Zustand for local/UI state
+- **Routing (dashboard):** TanStack Router (file-based, type-safe)
+- **Styling:** Tailwind CSS v4 shared via `@repo/tailwind-config`; components via `@repo/ui`
+- **i18n:** Wrap apps in the `@repo/i18n` provider; add translations to both `en` and `id` locale files
+- **API CORS:** Configured in Axum middleware; `NEXT_PUBLIC_API_URL` must be set in web `.env`
+
+#### Environment Variables
+
+API (`apps/api/.env`):
+
+```
+DATABASE_URL=postgresql://postgres:password@localhost:5432/monorepo_starter
+HOST=0.0.0.0
+PORT=3001
+RUST_LOG=api=debug,tower_http=debug,sqlx=warn
+```
+
+Web (`apps/web/.env`):
+
+```
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
