@@ -289,3 +289,18 @@ pnpm test             # Run tests for every workspace that defines one
                        # (currently: apps/api, apps/dashboard, packages/ui —
                        # apps/web and apps/docs have no test script yet, so
                        # turbo silently skips them rather than failing)
+pnpm clean            # Clean build artifacts
+```
+
+#### Per-app dev servers
+
+```bash
+pnpm dev:web          # Next.js web → http://localhost:3000
+pnpm dev:api          # Rust API → http://localhost:3001
+pnpm dev:docs         # Docs → http://localhost:3002
+pnpm dev:dashboard    # Dashboard → http://localhost:5174
+```
+
+#### Rust API (run inside `apps/api`)
+
+```bash
