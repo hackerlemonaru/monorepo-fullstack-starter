@@ -327,3 +327,31 @@ pnpm db:generate      # Regenerates @repo/api-types from Rust structs (via ts-rs
 
 ### Architecture
 
+This is a **Turborepo + pnpm workspaces** monorepo with four apps and six shared packages.
+
+#### Apps
+
+| App              | Tech                                               | Port |
+| ---------------- | -------------------------------------------------- | ---- |
+| `apps/web`       | Next.js 16, React 19, Three.js, Framer Motion      | 3000 |
+| `apps/api`       | Rust, Axum, SQLx, PostgreSQL                       | 3001 |
+| `apps/docs`      | Next.js 16, Fumadocs (MDX)                         | 3002 |
+| `apps/dashboard` | Vite, React, TanStack Router, React Query, Zustand | 5174 |
+
+#### Shared Packages
+
+| Package                   | Purpose                                                           |
+| ------------------------- | ----------------------------------------------------------------- |
+| `@repo/ui`                | 40+ shadcn/ui components (Radix UI + Tailwind)                    |
+| `@repo/i18n`              | i18next config, provider, and locale files (English + Indonesian) |
+| `@repo/api-types`         | TypeScript types auto-generated from Rust via `ts-rs`             |
+| `@repo/tailwind-config`   | Shared Tailwind v4 theme and global CSS                           |
+| `@repo/eslint-config`     | ESLint configs: `base`, `next-js`, `react-internal`               |
+| `@repo/typescript-config` | TSConfigs: `base`, `nextjs`, `react-library`                      |
+
+#### Type Safety Pipeline (Rust → TypeScript)
+
+The Rust API uses `ts-rs` macros to derive TypeScript types from Rust structs. Running `pnpm db:generate` exports these to `@repo/api-types`, which all frontend apps consume. When modifying Rust API types, regenerate before updating frontend code.
+
+#### Key Design Patterns
+
