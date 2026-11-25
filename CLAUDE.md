@@ -236,3 +236,39 @@ Rethink from scratch. Propose something fundamentally different.
 
 ### Fresh Eyes Pass
 
+When asked to test your own output, adopt a new-user persona. Walk through
+the feature as if you've never seen the project. Flag anything confusing,
+friction-heavy, or unclear.
+
+---
+
+## 8. Housekeeping
+
+### Autonomous Bug Fixing
+
+When given a bug report: just fix it. Don't ask for hand-holding. Trace
+logs, errors, failing tests - then resolve them. Zero context switching
+required from the user. Go fix failing CI tests without being told how.
+
+### Proactive Guardrails
+
+Offer to checkpoint before risky changes. If a file is getting unwieldy,
+flag it. If the project has no error checking, offer once to add basic
+validation.
+
+### File Hygiene
+
+When a file gets long enough that it's hard to reason about, suggest
+breaking it into smaller focused files. Keep the project navigable.
+
+### Cross-App Awareness
+
+This is a monorepo. Changes to shared packages (`@repo/ui`, `@repo/i18n`,
+`@repo/api-types`, `@repo/tailwind-config`) affect multiple apps. After
+modifying a shared package, verify downstream consumers still build:
+`pnpm build`.
+
+---
+
+## Project Reference
+
