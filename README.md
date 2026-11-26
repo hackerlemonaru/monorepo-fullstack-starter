@@ -119,3 +119,33 @@ pnpm dev:dashboard
 pnpm dev:api
 
 # Documentation
+pnpm dev:docs
+```
+
+**Access your applications:**
+
+- 🌐 **Web App**: http://localhost:3000
+- 🔧 **API**: http://localhost:3001
+- 📚 **Docs**: http://localhost:3002
+- 📊 **Dashboard**: http://localhost:5174
+
+### Build
+
+**Build all packages:**
+
+```bash
+pnpm build
+```
+
+**Build specific packages:**
+
+```bash
+pnpm build --filter=web
+pnpm build --filter=dashboard
+pnpm build --filter=api
+pnpm build --filter=docs
+```
+
+## 🧩 Component Library
+
+The `@repo/ui` package includes 40+ pre-built components from shadcn/ui:
