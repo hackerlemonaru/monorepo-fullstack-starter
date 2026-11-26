@@ -167,3 +167,20 @@ The `@repo/ui` package includes 40+ pre-built components from shadcn/ui:
 - **Radio Group** - Single selection from options
 - **Switch** - Toggle switches
 - **Slider** - Range inputs
+
+### Navigation
+
+- **Navigation Menu** - Complex navigation structures
+- **Breadcrumb** - Hierarchical navigation
+- **Pagination** - Page navigation
+- **Menubar** - Application menus
+
+### Feedback
+
+- **Alert** - Important messages
+- **Toast** - Temporary notifications
+- **Progress** - Loading indicators
+- **Skeleton** - Loading placeholders
+
+### Overlay
+
