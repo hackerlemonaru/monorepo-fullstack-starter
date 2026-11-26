@@ -149,3 +149,21 @@ pnpm build --filter=docs
 ## 🧩 Component Library
 
 The `@repo/ui` package includes 40+ pre-built components from shadcn/ui:
+
+### Layout Components
+
+- **Card** - Flexible content containers
+- **Separator** - Visual dividers
+- **Aspect Ratio** - Maintain aspect ratios
+- **Container** - Responsive containers
+
+### Form Components
+
+- **Button** - Various button styles and sizes
+- **Input** - Text inputs with validation
+- **Textarea** - Multi-line text inputs
+- **Select** - Dropdown selections
+- **Checkbox** - Boolean inputs
+- **Radio Group** - Single selection from options
+- **Switch** - Toggle switches
+- **Slider** - Range inputs
