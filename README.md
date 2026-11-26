@@ -60,3 +60,23 @@ This Monorepo includes the following packages and apps:
 ## 🚀 Quick Start
 
 ### Prerequisites
+
+- **Node.js** 22+
+- **pnpm** (recommended package manager)
+- **Git**
+
+### Installation
+
+1. **Use this template** (Recommended)
+   Click the **"Use this template"** button at the top of the GitHub repository to create your own copy and start building immediately.
+
+2. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/dzikrisyairozi/monorepo-fullstack-starter.git
+   cd monorepo-fullstack-starter
+   ```
+
+3. **Install dependencies**
+
+   ```bash
