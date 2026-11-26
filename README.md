@@ -80,3 +80,42 @@ This Monorepo includes the following packages and apps:
 3. **Install dependencies**
 
    ```bash
+   pnpm install
+   ```
+
+4. **Set up environment variables**
+
+   ```bash
+   # Copy environment files
+   cp apps/api/.env.example apps/api/.env
+   # Make sure to update your DATABASE_URL in apps/api/.env
+   ```
+
+5. **Set up the database** (if using the API)
+   ```bash
+   cd apps/api
+   cargo sqlx database setup
+   cd ../..
+   ```
+
+### Development
+
+**Start all applications:**
+
+```bash
+pnpm dev
+```
+
+**Start specific applications:**
+
+```bash
+# Frontend only
+pnpm dev:web
+
+# Dashboard only
+pnpm dev:dashboard
+
+# Backend only
+pnpm dev:api
+
+# Documentation
