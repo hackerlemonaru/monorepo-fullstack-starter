@@ -22,3 +22,41 @@ A production-ready fullstack starter built with **Turborepo** monorepo architect
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
 - 📱 **Responsive Design** - Mobile-first approach with dark/light mode support
 - 🔧 **Developer Experience** - ESLint, Prettier, Husky, and Commitlint pre-configured
+- 🌍 **Internationalization (i18n)** - Full multi-language support (English/Indonesian) across Web, Docs, and Dashboard
+- 🐳 **Docker Ready** - Containerization support for easy deployment
+- 🔄 **CI/CD** - GitHub Actions workflows included
+
+## 📦 What's Inside?
+
+This Monorepo includes the following packages and apps:
+
+### Apps
+
+- **`api`** - Rust backend API (Axum + SQLx)
+- **`dashboard`** - Admin dashboard (TanStack Router + React)
+- **`docs`** - Documentation site (Next.js + Fumadocs)
+- **`web`** - Premium landing page (Next.js + React Three Fiber)
+
+### Packages
+
+- **`@repo/api-types`** - Auto-generated TS types from the Rust API
+- **`@repo/i18n`** - Shared internationalization configuration and UI components
+- **`@repo/ui`** - Shared React component library
+- **`@repo/eslint-config`** - Shared ESLint configurations
+- **`@repo/tailwind-config`** - Shared Tailwind CSS theme
+- **`@repo/typescript-config`** - Shared TypeScript configurations
+
+### Tools & Configuration
+
+- **TypeScript** - Static type checking across all packages
+- **ESLint** - Code linting with custom rules
+- **Prettier** - Code formatting
+- **Husky** - Git hooks for code quality
+- **Commitlint** - Conventional commit message linting
+- **Tailwind CSS** - Utility-first styling
+- **Rust/Cargo** - Backend language and package manager
+- **Docker** - Containerization support
+
+## 🚀 Quick Start
+
+### Prerequisites
