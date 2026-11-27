@@ -62,3 +62,9 @@ updates:
       prefix: 'ci'
       include: 'scope'
     labels:
+      - 'github-actions'
+      - 'automated'
+    groups:
+      github-actions-updates:
+        patterns:
+          - '*'
