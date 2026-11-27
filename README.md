@@ -238,3 +238,43 @@ cd ../..
 Build and run with Docker:
 
 ```bash
+# Build Docker image
+docker build -t monorepo-fullstack-starter .
+
+# Run container
+docker run -p 3000:3000 monorepo-fullstack-starter
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+**Web App (`apps/web/.env`)**
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3001
+```
+
+**Database/API (`apps/api/.env`)**
+
+```env
+DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
+JWT_SECRET="your-jwt-secret"
+```
+
+### Customization
+
+- **Theme**: Modify `packages/tailwind-config/theme.css` for custom themes (if configured)
+- **Components**: Add new components to `packages/ui/src/`
+- **API Routes**: Add endpoints in `apps/api/src/`
+- **Database**: Update schema via migrations in `apps/api/migrations`
+
+## 🚢 Deployment
+
+### Vercel (Recommended for Frontend)
+
+1. **Connect your repository** to Vercel
+2. **Configure build settings**:
+   - Build Command: `pnpm build --filter=web`
+   - Output Directory: `apps/web/.next`
+3. **Set environment variables** in Vercel dashboard
