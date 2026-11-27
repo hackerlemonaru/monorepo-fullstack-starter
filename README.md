@@ -278,3 +278,25 @@ JWT_SECRET="your-jwt-secret"
    - Build Command: `pnpm build --filter=web`
    - Output Directory: `apps/web/.next`
 3. **Set environment variables** in Vercel dashboard
+4. **Deploy** 🚀
+
+### Docker Deployment
+
+```bash
+# Build production image
+docker build -t turborepo-starter .
+
+# Run in production
+docker run -p 3000:3000 -e NODE_ENV=production turborepo-starter
+```
+
+### Railway/Render (API)
+
+1. **Connect your repository**
+2. **Environment**: Select Rust
+3. **Set build command**: `cargo build --release`
+4. **Set start command**: `./target/release/api`
+5. **Configure environment variables**
+
+## 🤝 Contributing
+
