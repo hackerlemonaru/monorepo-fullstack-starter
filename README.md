@@ -199,3 +199,21 @@ The `@repo/ui` package includes 40+ pre-built components from shadcn/ui:
 - **Calendar** - Date selection
 - **Chart** - Data visualizations
 
+## 🛠️ Development Scripts
+
+```bash
+# Development
+pnpm dev              # Start all apps in development
+pnpm dev:web          # Start web app only
+pnpm dev:dashboard    # Start dashboard only
+pnpm dev:api          # Start API only
+pnpm dev:docs         # Start docs only
+
+# Building
+pnpm build            # Build all packages
+pnpm build:web        # Build web app only
+pnpm build:dashboard  # Build dashboard only
+pnpm build:api        # Build API only
+pnpm build:docs       # Build docs only
+
+# Code Quality
