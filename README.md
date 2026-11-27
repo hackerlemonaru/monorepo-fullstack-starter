@@ -217,3 +217,24 @@ pnpm build:api        # Build API only
 pnpm build:docs       # Build docs only
 
 # Code Quality
+pnpm lint             # Lint all packages
+pnpm lint:fix         # Fix linting issues
+pnpm format           # Format code with Prettier
+pnpm type-check       # Run TypeScript checks
+
+# Testing
+pnpm test             # Run all tests
+pnpm test:watch       # Run tests in watch mode
+
+# Database (API)
+cd apps/api
+cargo sqlx database setup # Run migrations
+cargo sqlx prepare        # Prepare query metadata
+cd ../..
+```
+
+## 🐳 Docker Support
+
+Build and run with Docker:
+
+```bash
