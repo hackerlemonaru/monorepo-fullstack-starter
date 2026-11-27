@@ -184,3 +184,18 @@ The `@repo/ui` package includes 40+ pre-built components from shadcn/ui:
 
 ### Overlay
 
+- **Dialog** - Modal dialogs
+- **Drawer** - Slide-out panels
+- **Popover** - Contextual overlays
+- **Tooltip** - Helpful hints
+- **Sheet** - Side panels
+- **Hover Card** - Rich hover content
+
+### Data Display
+
+- **Table** - Data tables
+- **Badge** - Status indicators
+- **Avatar** - User representations
+- **Calendar** - Date selection
+- **Chart** - Data visualizations
+
